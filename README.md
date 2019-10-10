@@ -1,7 +1,7 @@
 # xrb-sens-datashare
 A repository for sharing intermediate and final data products in machine and/or human-readable formats coming out of the JINA-CEE xrb reaction rate sensitivity project.
 
-## Getting data
+## Getting Data
 
 If you're familiar with `git`, then you can easily get the data with the usual git workflow:
 
@@ -17,3 +17,7 @@ If using `git` isn't convenient for you but you're fine to use common \*nix shel
 curl https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/README.md -o README.md
 ```
 will download this `README.md` file to your local working directory.
+
+## Key Available Data
+
+TODO: Add references to major data products.
