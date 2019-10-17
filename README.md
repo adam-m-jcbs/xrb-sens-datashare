@@ -31,7 +31,7 @@ resources are added, I will add URLs and brief descriptions below.
 
 ## Key Available Data
 
-**`gs1826/ash/gs1826_100x_ash_metrics_tab.dat`**
+**`gs1826/ash/gs1826_100x_ash_metrics_tab.dat`**  
 Copy just this file with 
 `wget https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/gs1826/ash/gs1826_100x_ash_metrics_tab.dat`
 
