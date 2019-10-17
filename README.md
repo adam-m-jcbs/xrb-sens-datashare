@@ -39,4 +39,3 @@ wget https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/gs1
 This file contains the results of analyzing a grid of ~1200 reaction rate
 variations by a factor of 100 up and down.  The data is in terms of ash metrics
 we've developed.  TODO: add more explanation.
-
