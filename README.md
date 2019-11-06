@@ -21,8 +21,8 @@ to your local directory.
 If using `git` isn't convenient for you but you're fine to use common \*nix
 shell commands, you can get data from the `raw` url for this project
 ([https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/](https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/)).
-For example,
 
+For example,
 ```
 wget https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/README.md
 ```
@@ -32,10 +32,8 @@ resources are added, I will add URLs and brief descriptions below.
 ## Key Available Data
 
 **`gs1826/ash/gs1826_100x_ash_metrics_tab.dat`**  
-Copy just this file with  
+Copy with  
 ```
 wget https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/gs1826/ash/gs1826_100x_ash_metrics_tab.dat
 ```  
-This file contains the results of analyzing a grid of ~1200 reaction rate
-variations by a factor of 100 up and down.  The data is in terms of ash metrics
-we've developed.  TODO: add more explanation.
+[Ash data details](gs1826/ash/ash_data_overview.md)
