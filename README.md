@@ -82,29 +82,29 @@ contributing and giving due credit will be implemented in this repository.  In
 the meantime, the following are the original authors, along with some of their
 primary contributions:
 
-Adam Jacobs (Maintainer, Original Author):
+Adam Jacobs (Maintainer, Original Author):  
 JINA-CEE, MSU  
   + Developed the vast majority of the infrastructure for carrying out simulations and managing their data
   + Deployed and managed the Kepler simulation suites.  Currently at about 10,000 archived models and counting.
   + Coordinated and organized the collaboration
 
-Zac Johnston (Original Author):
+Zac Johnston (Original Author):  
 MSU  
   + Contributed essential components to the simulation/data management framework
   + Provided expert consultation on Kepler, carrying out massive 1D parameter studies, statistical analysis
 
-Ed Brown & Hendrik Schatz (Original Authors):
+Ed Brown & Hendrik Schatz (Original Authors):  
 JINA-CEE, MSU, NSCL, FRIB
   + Secured funding and managed logistics / people
   + Provided expert consultation on Kepler, nuclear theory, nuclear experiment, nuclear data, nuclear astrophysics
 
-Matt Amthor (Original Author):
+Matt Amthor (Original Author):  
 Bucknell
   + Provided expert consultation on the preceding study, which he was a co-author of
   + Provided expert consultation on nuclear experiment, Kepler, and data anlaysis
   + Carried out analysis of reaction network flows
 
-Alexander Heger (Original Author):
+Alexander Heger (Original Author):  
 Monash
   + Provided access to and support for using the Kepler stellar evolution code
   + Actively maintains and enhances the Kepler stellar evolution code, including to facilitate this simulation suite's efforts
