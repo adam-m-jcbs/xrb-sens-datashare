@@ -3,6 +3,13 @@ A repository for sharing intermediate and final data products in machine and/or
 human-readable formats coming out of the JINA-CEE xrb reaction rate sensitivity
 project.
 
+DISCLAIMER: The primary author and maintainer of this repository
+is Adam Jacobs.  Any mistakes, confusing data, wrong data, or
+similar flaws in this repo are my responsibility and mine alone.
+Please address questions and issues to me, not to those that may
+maintain any of the tools/codes I have used.  Any amazing things
+in the repo feel free to attribute to my fantastic collaborators.
+
 ## Getting Data
 
 If you're familiar with `git`, then you can easily get the data with the usual git workflow:
@@ -66,3 +73,40 @@ Copy with
 wget https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/gs1826/ash/gs1826_100x_ash_metrics_tab.dat
 ```  
 [Ash data details](gs1826/ash/ash_data_overview.md)
+
+## Credit / Authorship
+
+As a living repository, many are involved in the creation, maintenance,
+analysis, and data generation.  A more formal and systematic policy for
+contributing and giving due credit will be implemented in this repository.  In
+the meantime, the following are the original authors, along with some of their
+primary contributions:
+
+Adam Jacobs (Maintainer, Original Author):
+JINA-CEE, MSU  
+  + Developed the vast majority of the infrastructure for carrying out simulations and managing their data
+  + Deployed and managed the Kepler simulation suites.  Currently at about 10,000 archived models and counting.
+  + Coordinated and organized the collaboration
+
+Zac Johnston (Original Author):
+MSU  
+  + Contributed essential components to the simulation/data management framework
+  + Provided expert consultation on Kepler, carrying out massive 1D parameter studies, statistical analysis
+
+Ed Brown & Hendrik Schatz (Original Authors):
+JINA-CEE, MSU, NSCL, FRIB
+  + Secured funding and managed logistics / people
+  + Provided expert consultation on Kepler, nuclear theory, nuclear experiment, nuclear data, nuclear astrophysics
+
+Matt Amthor (Original Author):
+Bucknell
+  + Provided expert consultation on the preceding study, which he was a co-author of
+  + Provided expert consultation on nuclear experiment, Kepler, and data anlaysis
+  + Carried out analysis of reaction network flows
+
+Alexander Heger (Original Author):
+Monash
+  + Provided access to and support for using the Kepler stellar evolution code
+  + Actively maintains and enhances the Kepler stellar evolution code, including to facilitate this simulation suite's efforts
+  + Hosted collaborative meetings at Monash
+  + Provided expert consultation on Kepler, nuclear theory, nuclear data, nuclear astrophysics
