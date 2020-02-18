@@ -21,12 +21,13 @@ git clone git@github.com:adam-m-jcbs/xrb-sens-datashare.git
 This repo is open, so no credentials or account should be needed for read (clone) access.
 
 The above command will copy the files into a `git`-managed directory called
-`xrb-sens-datashare`.  To get an updated version of the data, simple `cd` into
+`xrb-sens-datashare`.  To get an updated version of the data, simply `cd` into
 where you cloned and execute `git pull`.  This will fetch and add any new files
-to your local directory.
+to your local directory.  Note that because of their size, raw
+datasets must be manually fetched using the scripts provided.
 
 If using `git` isn't convenient for you but you're fine to use common \*nix
-shell commands, you can get data from the `raw` url for this project
+shell commands, you can get some data from the `raw` url for this project
 ([https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/](https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/)).
 
 For example,
@@ -51,9 +52,9 @@ data (with no promises of completeness or correctness), continue.
 Now that you have the git repository, `cd` into the `raw_pickles`
 directory. From there, execute the
 `get_gs1826_10x_grid_data.Nov5.pk.sh` script.  This will use
-`wget` to download a copy of the full grid dataset.  These can be
-5-10GB and are hosted on public resources, so it may take a while
-to download.  Fortunately, you should only need to do this once.
+`wget` to download a copy of the full `gs1826_10x` grid dataset.  These can be
+5-10GB and are hosted on public resources, so it may take a while to download.
+Fortunately, you should only need to do this once.
 
 Upon successful download, you will have a file in the directory
 called `gs1826_10x_grid_data.Nov5.pk`.  This is basically a
@@ -123,9 +124,9 @@ Monash
   + Hosted collaborative meetings at Monash
   + Provided expert consultation on Kepler, nuclear theory, nuclear data, nuclear astrophysics
 
-## LICENSE
+## LICENSE / Copyright
 
-License details are pending.  As of now, all of this is copyright
-JINA-CEE / MSU with all rights reserved.  An open release is
-being negotiated.  This should be considered as a read-only
-reference for the time-being.
+License details are pending.  As of now, all of this is  
+copyright JINA-CEE / MSU 2020  
+with all rights reserved.  An open, citable release is in the works.  This
+should be considered as a read-only reference for the time-being.
