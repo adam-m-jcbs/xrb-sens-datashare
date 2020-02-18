@@ -77,9 +77,10 @@ wget https://raw.githubusercontent.com/adam-m-jcbs/xrb-sens-datashare/master/gs1
 ## Credit / Authorship
 
 As a living repository, many are involved in the creation, maintenance,
-analysis, and data generation.  A more formal and systematic policy for
-contributing and giving due credit will be implemented in this repository.  In
-the meantime, the following are the original authors, along with some of their
+analysis, and management.  A more formal, systematic, and fair policy for
+contributing and giving due credit will be implemented in this
+repository.  In the meantime, the following are the original
+authors, along with some of their
 primary contributions:
 
 Adam Jacobs (Maintainer, Original Author):  
@@ -110,3 +111,10 @@ Monash
   + Actively maintains and enhances the Kepler stellar evolution code, including to facilitate this simulation suite's efforts
   + Hosted collaborative meetings at Monash
   + Provided expert consultation on Kepler, nuclear theory, nuclear data, nuclear astrophysics
+
+## LICENSE
+
+License details are pending.  As of now, all of this is copyright
+JINA-CEE / MSU with all rights reserved.  An open release is
+being negotiated.  This should be considered as a read-only
+reference for the time-being.
