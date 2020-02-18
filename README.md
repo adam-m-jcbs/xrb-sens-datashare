@@ -98,6 +98,7 @@ Ed Brown & Hendrik Schatz (Original Authors):
 JINA-CEE, MSU, NSCL, FRIB
   + Secured funding and managed logistics / people
   + Provided expert consultation on Kepler, nuclear theory, nuclear experiment, nuclear data, nuclear astrophysics
+  + Organized many collaborative meetings across the globe at leading institutions in nuclear astrophysics
 
 Matt Amthor (Original Author):  
 Bucknell
