@@ -38,10 +38,11 @@ resources are added, I will add URLs and brief descriptions below.
 
 ## Key Available Raw Data Products: Python Dictionary Pickles
 
-One of the features of this data repository is that it lets the user interact
-with and explore our data programatically in Python.  This is made possible by
-us shipping the data in a form any computer with Python can extract and
-analyze.
+One of the features of this data repository is that it lets the
+user interact with and explore our _raw_ data programatically in
+Python, in addition to providing our own reduced analysis of the
+raw data.  This is made possible by us shipping the data in a
+form any computer with Python can extract and analyze.
 
 For those that only want reduced, analyzed data, skip to later
 sections.  If you would like to directly load and explore our raw
