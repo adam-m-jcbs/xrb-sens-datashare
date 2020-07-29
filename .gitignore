@@ -1,2 +1,5 @@
 #Don't put creds in public repos
 gdrive-creds/
+
+#Don't track the raw data, it's too big
+raw_pickles/gs1826_10x_grid_data.Nov5.pk
