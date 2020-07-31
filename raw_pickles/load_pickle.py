@@ -81,6 +81,7 @@ if __name__ == "__main__":
     #highlighting some of the detailed data available.
     #Load in the raw data
     print('About to open')
+    #with open('4u1820ZJ_100x_grid_data.Nov18.pk', 'rb') as f:
     with open('gs1826_10x_grid_data.Nov5.pk', 'rb') as f:
         grid_data = load(f)
    
