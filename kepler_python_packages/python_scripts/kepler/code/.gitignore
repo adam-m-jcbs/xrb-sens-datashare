@@ -1,0 +1,8 @@
+*~
+.#*
+__pycache__
+._*
+_*.pyf
+*.mod
+_*.so
+_kepler*

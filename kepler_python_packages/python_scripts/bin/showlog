@@ -1,0 +1,14 @@
+#! /bin/env python3
+
+import logdata
+import sys
+
+if __name__ == "__main__":
+    filename = sys.argv[1]
+    selection = sys.argv[2:]
+
+    l = logdata.LogData(filename)
+    if len(selection) == 0:
+        l.show() 
+    else:
+        l.show(selection) 

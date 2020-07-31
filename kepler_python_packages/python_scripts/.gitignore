@@ -1,0 +1,10 @@
+.#*
+\#*
+*~
+.vscode
+*.pyc
+*.pyo
+__pycache__
+autoreload
+Untitled*.ipynb
+.ipynb_checkpoints/

@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+"""
+Copy python source to web page
+
+TODO - add argparse to allow options
+"""
+
+import os
+import os.path
+import subprocess
+import sys
+
+if 'local' in sys.argv:
+    remote = '/m/web/python3'
+else:
+    remote = '2sn:web/python3'
+
+dirs = ['.']
+
+dirs = [os.path.realpath(
+    os.path.expandvars(
+        os.path.expanduser(d)))
+            for d in dirs]
+
+
+# cmd_sync = "rsync -vuhrt --delete --inplace --delete-excluded --exclude-from=PY_EXCLUDE --progress".split()
+cmd_sync  =  "rsync -vuhrt --delete           --delete-excluded --exclude-from=PY_EXCLUDE --progress".split()
+cmd_git = ['git', 'pull']
+
+old_dir = os.getcwd()
+
+for d in dirs:
+    os.chdir(d)
+    subprocess.run(cmd_git, check = True)
+    cmd = cmd_sync + ['.', remote]
+    while True:
+        result = subprocess.run(cmd)
+        if result.returncode == 0:
+            break
+
+    # for now we just crash if the following fails
+    if remote.count(':') == 0:
+        cmd = "chmod -R a+r".split() + [remote]
+        subprocess.run(cmd, check = True)
+        cmd = ['find', remote] + "-type d -exec chmod a+x {} \;".split()
+        subprocess.run(cmd, check = True)

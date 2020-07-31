@@ -1,0 +1,42 @@
+# Use modern white background default with black lines.
+
+lines.color: white
+patch.edgecolor: black
+
+text.color: black
+
+axes.facecolor: white
+axes.edgecolor: black
+axes.labelcolor: black
+# to be updated
+axes.prop_cycle: cycler('color', ['8dd3c7', 'feffb3', 'bfbbd9', 'fa8174', '81b1d2', 'fdb462', 'b3de69', 'bc82bd', 'ccebc4', 'ffed6f'])
+
+xtick.color: black
+ytick.color: black
+
+grid.color: black
+
+figure.facecolor: white
+figure.edgecolor: white
+
+savefig.facecolor: black
+savefig.edgecolor: black
+savefig.dpi: 300
+savefig.transparent : True
+savefig.format: svgz
+# savefig.directory: .
+# savefig.papertype: a4
+
+# font.family: monospace
+font.size: 10.0
+
+# adjust latex fonts
+mathtext.fontset: custom
+# mathtext.rm: Bitstream Vera Sans
+# mathtext.it: Bitstream Vera Sans:italic
+# mathtext.bf: Bitstream Vera Sans:bold
+mathtext.rm: DejaVu Sans
+mathtext.it: DejaVu Sans:italic
+mathtext.bf: DejaVu Sans:bold
+mathtext.cal: DejaVu Sans
+mathtext.tt: monospace

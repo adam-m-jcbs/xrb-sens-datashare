@@ -1,0 +1,11 @@
+#! /bin/env python3
+
+import kepdump
+import sys
+
+if __name__ == "__main__":
+    filename = sys.argv[1]
+
+    d = kepdump.KepDump(filename)
+    c = d.core()
+    c.Print()

@@ -1,0 +1,9 @@
+#! /bin/env python3
+
+import logdata
+import sys
+
+if __name__ == "__main__":
+    filename = sys.argv[1]
+    l = logdata.LogData(filename)
+    l.cmd() 
