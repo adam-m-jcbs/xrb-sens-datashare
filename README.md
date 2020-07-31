@@ -59,13 +59,20 @@ Fortunately, you should only need to do this once.
 Upon successful download, you will have a file in the directory
 called `gs1826_10x_grid_data.Nov5.pk`.  This is basically a
 binary version of a Python dictionary full of xrb sensitivity
-data.  In later sections, we will see how to load this data and
-reduce it using the same scripts the authors of this repo use to
-reduce our data from these raw sources.
+data.  
 
-One snag you will run into is that the objects in this dictionary
-have some third-party dependencies.  Not to fret, this repository
-will provide all needed dependencies.
+As of now, this data structure requires some packages before it can be loaded.
+For convenience, we directly provide those packges here.  The `load_pickle.py`
+script gives an example of loading a grid of data out of the pickle and into a
+nested dictionary (which tries to be self-documenting).
+
+This script can serve as a starting template for engaging with our raw data.
+
+Some python dependencies will be needed, including
+- matplotlib
+- numpy-quaternion
+- scipy
+
 
 ## Key Available Reduced Data Products
 
