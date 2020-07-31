@@ -3,3 +3,4 @@ gdrive-creds/
 
 #Don't track the raw data, it's too big
 raw_pickles/gs1826_10x_grid_data.Nov5.pk
+raw_pickles/4u1820ZJ_100x_grid_data.Nov18.pk
