@@ -54,12 +54,14 @@ class BDat(Logged):
             path = os.getenv('KEPLER_DATA')
             if not path:
                 path = os.path.join(os.path.expanduser('~'), 'kepler', 'local_data')
-                self.logger.warning(f'Using default path "{path}".')
+                #self.logger.warning(f'Using default path "{path}".')
+                self.logger.warning('Using default path "{}".'.format(path))
             else:
                 path = os.path.expanduser(os.path.expandvars(path))
             filename = os.path.join(path, filename)
             if not os.path.exists(filename):
-                msg = f'Could not find data file "{filename_}".'
+                #msg = f'Could not find data file "{filename_}".'
+                msg = 'Could not find data file "{}".'.format(filename_)
                 self.logger.error(msg)
                 raise FileNotFoundError(msg)
 
@@ -379,7 +381,8 @@ class BDat(Logged):
                         x = spec_ions_me[isotope.ion(i)]
                     except KeyError:
                         x = 0
-                        print(f' [ERROR] NOT FOUND: {i} (returning {x})')
+                        #print(f' [ERROR] NOT FOUND: {i} (returning {x})')
+                        print(' [ERROR] NOT FOUND: {} (returning {})'.format(i,x))
                 self._mass_excess_data[i] = x
             me.append(x)
         if shape == ():

@@ -488,7 +488,8 @@ class ReactIon(DecIon):
     def mpl(self):
         s = self.reaction_names_latex.get(self.B, self.VOID_STRING)
         s = s.replace(',', '$,$')
-        s = f'$({s})$'
+        #s = f'$({s})$'
+        s = '$({})$'.format(s)
         return s
 
     def __mul__(self, x):

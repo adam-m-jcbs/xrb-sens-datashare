@@ -2841,14 +2841,20 @@ def compdump(d1, d2, detail = True):
         v1 = d1.__getattribute__(name)
         v2 = d2.__getattribute__(name)
         if type(v1) != type(v2):
-            print(f'{name:} have different typess:')
-            print(f'1: {type(v1)}')
-            print(f'2: {type(v2)}')
+            #print(f'{name:} have different typess:')
+            #print(f'1: {type(v1)}')
+            #print(f'2: {type(v2)}')
+            print('{:s} have different typess:'.format(name))
+            print('1: {}'.format(type(v1)))
+            print('2: {}'.format(type(v2)))
             return
         if np.shape(v1) != np.shape(v2):
-            print(f'{name:s} have different shapes:')
-            print(f'1: {np.shape(v1)}')
-            print(f'2: {np.shape(v2)}')
+            #print(f'{name:s} have different shapes:')
+            #print(f'1: {np.shape(v1)}')
+            #print(f'2: {np.shape(v2)}')
+            print('{:s} have different shapes:'.format(name))
+            print('1: {np.shape(v1)}'.format(np.shape(v1)))
+            print('2: {np.shape(v2)}'.format(np.shape(v2)))
             return
         if not np.alltrue(v1 == v2):
             print('{name:s} differs')

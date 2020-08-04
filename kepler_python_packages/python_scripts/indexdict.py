@@ -67,9 +67,10 @@ class IndexDict(collections.abc.Mapping):
         similar to dict get
         """
         if len(args) == 0:
-            raise TypeError(f"get() missing 1 required positional argument: 'key'")
+            raise TypeError("get() missing 1 required positional argument: 'key'")
         if len(args) > 2:
-            raise TypeError(f"get() takes from 1 to 2 positional arguments but {len(args)} were given")
+            #raise TypeError(f"get() takes from 1 to 2 positional arguments but {len(args)} were given")
+            raise TypeError("get() takes from 1 to 2 positional arguments but {} were given".format(len(args)))
         try:
             return self._get(args[0])
         except:

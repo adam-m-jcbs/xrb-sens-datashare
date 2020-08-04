@@ -24,7 +24,8 @@ except:
         @staticmethod
         def jit(*args, **kwargs):
             def no_jit(f):
-                print(f'[rot] WARNING: not optimising "{f.__name__}".')
+                #print(f'[rot] WARNING: not optimising "{f.__name__}".')
+                print('[rot] WARNING: not optimising "{}".'.format(f.__name__))
                 return f
             return no_jit
 

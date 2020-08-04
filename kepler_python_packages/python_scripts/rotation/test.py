@@ -31,14 +31,17 @@ def test1(random = False, time = None):
     results = []
     for r in rotations:
         x = r(omega, time)(vec)
-        print(f'{r}\n{x}')
+        #print(f'{r}\n{x}')
+        print('{}\n{}'.format(r, x))
         results.append(x)
     results = np.asarray(results)
     print('\nResiduals:')
     r = np.std(results, axis=0)/np.mean(results, axis=0)
-    print(f'{r}')
+    #print(f'{r}')
+    print('{}'.format(r))
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {t}'.format(t))
 
 def test2(random = False, dims = 1, time = 1.):
     """
@@ -57,14 +60,17 @@ def test2(random = False, dims = 1, time = 1.):
     results = []
     for r in rotations:
         x = r(omega, time)(vec)
-        print(f'{r}\n{x}')
+        #print(f'{r}\n{x}')
+        print('{}\n{}'.format(r,x))
         results.append(x)
     results = np.asarray(results)
     print('\nResiduals:')
     r = np.std(results, axis=0)/np.mean(results, axis=0)
-    print(f'{r}')
+    #print(f'{r}')
+    print('{}'.format(r))
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 def test3(random = False):
     """
@@ -79,14 +85,17 @@ def test3(random = False):
     results = []
     for r in rotations:
         x = r(omega, time)(vec)
-        print(f'{r}\n{x}')
+        #print(f'{r}\n{x}')
+        print('{}\n{}'.format(r,x))
         results.append(x)
     results = np.asarray(results)
     print('\nResiduals:')
     r = np.std(results, axis=0)/np.mean(results, axis=0)
-    print(f'{r}')
+    #print(f'{r}')
+    print('{}'.format(r))
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 
 def test4(random = False):
@@ -107,14 +116,17 @@ def test4(random = False):
     results = []
     for r in rotations:
         x = r(omega, time)(vec)
-        print(f'{r}\n{x}')
+        #print(f'{r}\n{x}')
+        print('{}\n{}'.format(r,x))
         results.append(x)
     results = np.asarray(results)
     print('\nResiduals:')
     r = np.std(results, axis=0)/np.mean(results, axis=0)
-    print(f'{r}')
+    #print(f'{r}')
+    print('{}'.format(r))
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 def test5(random = False, time = True, omega = True, vec = True):
     """
@@ -146,14 +158,17 @@ def test5(random = False, time = True, omega = True, vec = True):
     results = []
     for r in rotations:
         x = r(omega, time)(vec)
-        print(f'\n{r}\n{x}')
+        #print(f'\n{r}\n{x}')
+        print('\n{}\n{}'.format(r,x))
         results.append(x)
     results = np.asarray(results)
     print('\nResiduals:')
     r = np.std(results, axis=0)/np.mean(results, axis=0)
-    print(f'{r}')
+    #print(f'{r}')
+    print('{}'.format(r))
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 
 def test6(random = False, time = True, align = (5,)):
@@ -177,14 +192,17 @@ def test6(random = False, time = True, align = (5,)):
     for r in rotations:
         x = r(omega, time)(vec, align = len(align))
         #print(f'\n{r}\n{x}')
-        print(f'\n{r}')
+        
+        #print(f'\n{r}')
+        print('\n{r}'.format(r))
         results.append(x)
     results = np.asarray(results)
     #print('\nResiduals:')
     r = np.std(results, axis=0)/np.mean(results, axis=0)
     #print(f'{r}')
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 def test7(random = False, time = True, align = (5,)):
     """
@@ -208,14 +226,17 @@ def test7(random = False, time = True, align = (5,)):
     for r in rotations:
         x = r(omega, time, phase)(vec, align = len(align))
         #print(f'\n{r}\n{x}')
-        print(f'\n{r}')
+        
+        #print(f'\n{r}')
+        print('\n{}'.format(r))
         results.append(x)
     results = np.asarray(results)
     #print('\nResiduals:')
     r = np.std(results, axis=0)/np.mean(results, axis=0)
     #print(f'{r}')
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 def test_speed():
     """
@@ -233,7 +254,9 @@ def test_speed():
     for r in rotations:
         t0, p0 = tm.time(), tm.process_time()
         x = r(omega, time)(vec)
-        print(f'\n{r} - {tm.process_time()-p0} s, {tm.time()-t0} s')
+        #print(f'\n{r} - {tm.process_time()-p0} s, {tm.time()-t0} s')
+        print('\n{} - {} s, {} s'.format(
+              r, tm.process_time()-p0, tm.time()-t0))
 
 def test_xyz(n = 1000):
     w = 1 - 2 * np.random.rand(3*n).reshape((-1, 3))
@@ -243,7 +266,8 @@ def test_xyz(n = 1000):
     results = np.asarray([w, v, u])
     r = np.std(results, axis=0)/np.mean(results, axis=0)
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 def test_zyx(n = 1000):
     w = 1 - 2 * np.random.rand(3*n).reshape((-1, 3))
@@ -253,7 +277,8 @@ def test_zyx(n = 1000):
     results = np.asarray([w, v, u])
     r = np.std(results, axis=0)/np.mean(results, axis=0)
     t = np.sqrt(np.average(r*r))
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 
 def test_qwu(n = 1000):
@@ -269,7 +294,8 @@ def test_qwu(n = 1000):
     results.append(u2w(w2u(w)) - w)
     results.append(q2w(w2q(w)) - w)
     t = [np.sqrt(np.average(r*r)) for r in results]
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 def test_qw_(n = 1000):
     w = 1 - 2 * np.random.rand(3*n).reshape((-1, 3))
@@ -287,7 +313,8 @@ def test_qw_(n = 1000):
     results.append(quat.as_float_array(w2q(q2w__(q)) - q))
 
     t = [np.sqrt(np.average(r*r)) for r in results]
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))
 
 
 def test_wv2(n = 1000):
@@ -305,4 +332,5 @@ def test_wv2(n = 1000):
     results.append(np.array([Rotator(wv2tr(wx, vx)[0])(vx) - vx for wx, vx in zip(w,v)]))
 
     t = [np.sqrt(np.average(r*r)) for r in results]
-    print(f'\n RESIDUAL: {t}')
+    #print(f'\n RESIDUAL: {t}')
+    print('\n RESIDUAL: {}'.format(t))

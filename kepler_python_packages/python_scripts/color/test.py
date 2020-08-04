@@ -374,7 +374,8 @@ def test_gamma2(color = 'white', level = 0.5, sat = 1, bits = 8):
             img_y = fig.figimage(y, xo = dx//3, yo = dy//3)
             fig.show()
             gamma = np.log(level) / np.log(l / (scale * sat))
-            print(f'level: {l}, gamma={gamma:5.3f}')
+            #print(f'level: {l}, gamma={gamma:5.3f}')
+            print('level: {}, gamma={:5.3f}'.format(l, gamma))
     fig.canvas.mpl_connect('key_press_event', onkeypress)
 
 def test_gamma3(color = 'white', level = 0.5, sat = 1, bits = 8):

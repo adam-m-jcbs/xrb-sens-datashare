@@ -162,7 +162,8 @@ def time2human(time,
         sv = sv.strip()
     if fixed:
         if len(sv) < digits + 1:
-            sv = f'{sv:>{digits + 1}}'
+            #sv = f'{sv:>{digits + 1}}'
+            sv = '{:>{}s}'.format(sv, digits + 1)
     s = sv + ' ' + su
     if extended:
         if xtime == 0:

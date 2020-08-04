@@ -127,7 +127,8 @@ def bbncoc(filename, write = False):
     if write:
         with open(filename, 'at') as f:
             for a in abu:
-                f.write(f'{a[0].name():5s} {a[1]:12.5e}\n')
+                #f.write(f'{a[0].name():5s} {a[1]:12.5e}\n')
+                f.write('{:5s} {:12.5e}\n'.format(a[0].name(), a[1]))
     return abu
 
 
@@ -311,8 +312,11 @@ class ScaledSolarHelium(ScaledSolar):
         super().__init__(**kwargs)
         if self.helium is None:
             self.helium = self('He4')
+        #self.comment += (
+        #    f'Helium set to mass fraction: {self.helium:g}',
+        #    )
         self.comment += (
-            f'Helium set to mass fraction: {self.helium:g}',
+            'Helium set to mass fraction: {:g}'.format(self.helium),
             )
 
 class Asplund2009Data(AbuSet):

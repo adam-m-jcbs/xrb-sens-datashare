@@ -91,7 +91,10 @@ class DataInputBuffer(object):
         This can be used to deterim whether all data has been read,
         i.e., as a consistency check of the read data sizes"""
         if not self.eor():
-            print(f'[FORTRANFILE] Not at end of record.\n[FORTRANFILE] Position = {self.pos}\n[FORTRANFILE] RecLen   = {self.reclen}')
+            #NOTE: replacing f-string with format() to support more versions of Python
+            #print(f'[FORTRANFILE] Not at end of record.\n[FORTRANFILE] Position = {self.pos}\n[FORTRANFILE] RecLen   = {self.reclen}')
+            print('[FORTRANFILE] Not at end of record.\n[FORTRANFILE] Position = {}\n[FORTRANFILE] RecLen   = {}'.format(
+                  self.pos, self.reclen))
 
     def check_buf(self, length, offset=0):
         """Check whether length bytes are still available on buffer.

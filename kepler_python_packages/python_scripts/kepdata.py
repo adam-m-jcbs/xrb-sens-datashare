@@ -584,7 +584,8 @@ class KepData(Logged):
                 for i,d in enumerate('xyz'):
                     columns += [self.DataColumn(
                         data = self.dump.angw[:, i],
-                        name = f'cell {d} angular velocity',
+                        #name = f'cell {d} angular velocity',
+                        name = 'cell {} angular velocity'.format(d),
                         unit = 'rad/sec',
                         center = True,
                         first = True,
@@ -800,7 +801,8 @@ class KepData(Logged):
                         void = void,
                         )]
             else:
-                raise Exception(f'column type "{col}" not found.')
+                #raise Exception(f'column type "{col}" not found.')
+                raise Exception('column type "{}" not found.'.format(col))
 
         if outdir is None:
             if outfile:

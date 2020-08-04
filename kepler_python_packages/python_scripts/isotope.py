@@ -623,7 +623,8 @@ class Ion(object, metaclass = MetaSingletonHash):
         if self.is_photon():
             s = r'\gamma'
             if self.E > 1:
-                s = rf'{{{s}}}^{{{self.E}}}'
+                #s = rf'{{{s}}}^{{{self.E}}}'
+                s = r'{{{}}}^{{{}}}'.format(s, self.E)
             return s
 
         if self.is_lepton():
@@ -633,32 +634,37 @@ class Ion(object, metaclass = MetaSingletonHash):
                     l = r'\nu'
                 else:
                     l = r'\bar{\nu}'
-                s = rf'{{{l}}}_{{{f}}}'
+                #s = rf'{{{l}}}_{{{f}}}'
+                s = r'{{{}}}_{{{}}}'.format(l, f)
             else:
                 if self.Z == 1:
                     c = '+'
                 else:
                     c = '-'
-                s = rf'{{{f}}}^{{{c}}}'
+                #s = rf'{{{f}}}^{{{c}}}'
+                s = r'{{{}}}^{{{}}}'.format(f, c)
             return s
 
         el = Elements[self.Z]
         if self.is_element():
             if self.Z == 0:
                 el = 'n'
-            return rf"\mathrm{{{el:s}}}"
+            return r"\mathrm{{{:s}}}".format(el)
 
         if self == NEUTRON:
             return r'\mathrm{n}'
 
         a = str(self.A)
         if self.is_isotope():
-            return rf'^{{{a:s}}}\mathrm{{{el:s}}}'
+            #return rf'^{{{a:s}}}\mathrm{{{el:s}}}'
+            return r'^{{{:s}}}\mathrm{{{:s}}}'.format(a,el)
 
         if self.is_isomer():
             kw = {k:kwargs[k] for k in ('m1', 'g') if k in kwargs}
-            e = rf'\mathrm{{{self.isomer_name(self.E, **kw)}}}'
-            return rf'^{{{a:s}}}\mathrm{{{el:s}}}^{{{e:s}}}'
+            #e = rf'\mathrm{{{self.isomer_name(self.E, **kw)}}}'
+            #return rf'^{{{a:s}}}\mathrm{{{el:s}}}^{{{e:s}}}'
+            e = r'\mathrm{{{}}}'.format(self.isomer_name(self.E, **kw))
+            return r'^{{{:s}}}\mathrm{{{:s}}}^{{{:s}}}'.format(a, el, e)
 
         return '-'
 
@@ -719,22 +725,27 @@ class Ion(object, metaclass = MetaSingletonHash):
     def mpl(self):
         if self.is_element():
             el = Elements[self.Z]
-            return fr"$\mathsf{{{el}}}$"
+            #return fr"$\mathsf{{{el}}}$"
+            return r"$\mathsf{{{}}}$".format(el)
         if self.is_isobar():
-            return fr"$\mathsf{{{self.A:d}}}$"
+            #return fr"$\mathsf{{{self.A:d}}}$"
+            return r"$\mathsf{{{:d}}}$".format(self.A)
         if self.is_isotone():
-            return fr"$\mathsf{{{self.N:d}}}$"
+            #return fr"$\mathsf{{{self.N:d}}}$"
+            return r"$\mathsf{{{:d}}}$".format(self.N)
         if self.is_isotope():
             if self == NEUTRON:
                 return r"$\mathsf{n}$"
             el = Elements[self.Z]
             a = str(self.A)
-            return fr"$\mathsf{{^{{{a}}}{el}}}$"
+            #return fr"$\mathsf{{^{{{a}}}{el}}}$"
+            return r"$\mathsf{{^{{{}}}{}}}$".format(a, el)
         if self.is_isomer():
             el = Elements[self.Z]
             a = str(self.A)
             m = self.isomer_name(self.E)
-            return fr"$\mathsf{{^{{{a}}}{el}^{{{m}\!}}}}$"
+            #return fr"$\mathsf{{^{{{a}}}{el}^{{{m}\!}}}}$"
+            return r"$\mathsf{{^{{{}}}{}^{{{}\!}}}}$".format(a, el, m)
         if self.is_lepton():
             f = (r'e', r'\mu', r'\tau')[self.E // 2]
             if self.Z == 0:
@@ -742,19 +753,24 @@ class Ion(object, metaclass = MetaSingletonHash):
                     l = r'\nu'
                 else:
                     l = r'\bar{\nu}'
-                s = rf'{{{l}}}_{{{f}}}'
+                #s = rf'{{{l}}}_{{{f}}}'
+                s = r'{{{}}}_{{{}}}'.format(l, f)
             else:
                 if self.Z == 1:
                     c = '+'
                 else:
                     c = '-'
-                s = rf'{{{f}}}^{{{c}}}'
-            return fr"$\mathsf{{{s}}}$"
+                #s = rf'{{{f}}}^{{{c}}}'
+                s = r'{{{}}}^{{{}}}'.format(f, c)
+            #return fr"$\mathsf{{{s}}}$"
+            return r"$\mathsf{{{}}}$".format(s)
         if self.is_photon():
             s = r'\gamma'
             if self.E > 1:
-                s = rf'{{{s}}}^{{{self.E}}}'
-            return fr"$\mathsf{{{s}}}$"
+                #s = rf'{{{s}}}^{{{self.E}}}'
+                s = r'{{{}}}^{{{}}}'.format(s, self.E)
+            #return fr"$\mathsf{{{s}}}$"
+            return r"$\mathsf{{{}}}$".format(s)
         return '*'
 
     def LaTeX_Table(self,
@@ -1319,7 +1335,8 @@ class Ion(object, metaclass = MetaSingletonHash):
         if not self._is_ion(x):
             y = ion(x)
             if y.idx == self.VOID_IDX:
-                raise AttributeError(f'Cannot convert {x!r} to {Ion.__class__.__name__!r}.')
+                #raise AttributeError(f'Cannot convert {x!r} to {Ion.__class__.__name__!r}.')
+                raise AttributeError('Cannot convert {!r} to {!r}.'.format(x, Ion.__class__.__name__))
             else:
                 x = y
         if x._custom_add:

@@ -416,33 +416,64 @@ class AbuData(object):
         if i1 is None:
             i1 = self.data.shape[0] - 1
 
+        #NOTE: comment out version which uses fstring, which are not widely supported enough currently
+        #with open(filename, 'wt') as f:
+        #    f.write(f'{card_cmt} COMPUTER-GENERATED BURN GENERATOR FILE\n')
+        #    f.write(f'{card_cmt} VERSION {version2human(version)}\n')
+        #    f.write(f'{card_cmt} {time.asctime(time.gmtime())} UTC\n')
+        #    f.write(f'{card_cmt}\n')
+
+        #    for c in comment:
+        #        f.write(f'{card_cmd} {c}\n')
+        #    f.write(f'{card_cmt}\n')
+
+        #    indent = f'{card_net} {net:d} '
+        #    for line in wrap(
+        #            ' '.join([iso.Kepler() for iso in oions]),
+        #            initial_indent = indent,
+        #            subsequent_indent = indent,
+        #            ):
+        #        f.write(f'{line}\n')
+        #    f.write(f'{card_cmt}\n')
+        #    f.write(f'{card_cmt} raw ppnb data (as needed in ppnb)\n')
+        #    s = ''.join([f'{i.name():>25s}' for i in oions])
+        #    f.write(f'{card_cmt} {s[2:]}\n')
+        #    f.write(f'{card_abu} {net:d} {zone0} {zone0 + i1 - i0}\n')
+        #    for i in range(i0, i1+1):
+        #        x = abu[i, :]
+        #        x = np.maximum(x, 0.)
+        #        x[x < 1.00001e-99] = 0.
+        #        f.write(''.join([f'{float(a):25.17e}' for a in x]) + '\n')
+
         with open(filename, 'wt') as f:
-            f.write(f'{card_cmt} COMPUTER-GENERATED BURN GENERATOR FILE\n')
-            f.write(f'{card_cmt} VERSION {version2human(version)}\n')
-            f.write(f'{card_cmt} {time.asctime(time.gmtime())} UTC\n')
-            f.write(f'{card_cmt}\n')
+            f.write('{card_cmt} COMPUTER-GENERATED BURN GENERATOR FILE\n'.format(card_cmt))
+            f.write('{card_cmt} VERSION {version2human(version)}\n'.format(card_cmt))
+            f.write('{card_cmt} {time.asctime(time.gmtime())} UTC\n'.format(card_cmt))
+            f.write('{card_cmt}\n'.format(card_cmt))
 
             for c in comment:
-                f.write(f'{card_cmd} {c}\n')
-            f.write(f'{card_cmt}\n')
+                f.write('{} {}\n'.format(card_cmd, c))
+            f.write('{}\n'.format(card_cmt))
 
-            indent = f'{card_net} {net:d} '
+            indent = '{} {:d} '.format(card_net, net)
             for line in wrap(
                     ' '.join([iso.Kepler() for iso in oions]),
                     initial_indent = indent,
                     subsequent_indent = indent,
                     ):
-                f.write(f'{line}\n')
-            f.write(f'{card_cmt}\n')
-            f.write(f'{card_cmt} raw ppnb data (as needed in ppnb)\n')
-            s = ''.join([f'{i.name():>25s}' for i in oions])
-            f.write(f'{card_cmt} {s[2:]}\n')
-            f.write(f'{card_abu} {net:d} {zone0} {zone0 + i1 - i0}\n')
+                f.write('{}\n'.format(line))
+            f.write('{}\n'.format(card_cmt))
+            f.write('{} raw ppnb data (as needed in ppnb)\n'.format(card_cmt))
+            s = ''.join(['{:>25s}'.format(i.name()) for i in oions])
+            f.write('{} {}\n'.format(card_cmt, s[2:]))
+            f.write('{} {:d} {} {}\n'.format(card_abu, net, zone0, zone0 + i1 - i0 ))
             for i in range(i0, i1+1):
                 x = abu[i, :]
                 x = np.maximum(x, 0.)
                 x[x < 1.00001e-99] = 0.
-                f.write(''.join([f'{float(a):25.17e}' for a in x]) + '\n')
+                f.write(''.join(['{:25.17e}'.format(float(a)) for a in x]) + '\n')
+
+
 
 def get_burn_map(ions):
     """
@@ -505,7 +536,8 @@ def get_burn_map(ions):
         add = True
         if n  == 2:
             if (A > netw[Z,0,1]) and (A < netw[Z,1,0]):
-                print(f'{iso.name()} inside required gap.')
+                #print(f'{iso.name()} inside required gap.')
+                print('{} inside required gap.'.format(iso.name()))
                 add = False
         if add:
             imap.append(i)
@@ -1339,7 +1371,8 @@ class AbuSet(Logged):
 
         if not isinstance(outfile, io.IOBase):
             filename = os.path.expanduser(os.path.expandvars(outfile))
-            assert overwrite or not os.path.exists(filename), f'file exisits: {filename}'
+            #assert overwrite or not os.path.exists(filename), f'file exisits: {filename}'
+            assert overwrite or not os.path.exists(filename), 'file exisits: {}'.format(filename)
             f = open(filename,'w')
         else:
             f = outfile
